@@ -1,0 +1,43 @@
+#This script is only used if you did a manual installation of CosmoSIS;
+#i.e. if you did not use the "bootstrap" script and have no "ups" directory
+
+#See the wiki https://bitbucket.org/joezuntz/cosmosis/wiki/Manual%20Install
+#on how to change and use this file
+
+export COSMOSIS_ALT_COMPILERS=1
+#export CXX=x86_64-conda_cos6-linux-gnu-g++
+#export CC=x86_64-conda_cos6-linux-gnu-gcc
+#export FC=x86_64-conda_cos6-linux-gnu-f95
+#export MPIFC=mpif90
+
+
+export COSMOSIS_SRC_DIR=/home/groups/kipac/yomori/packages/cosmosis_py3develop
+
+#The gnu science library
+export GSL_INC=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/include
+export GSL_LIB=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib
+
+#The cfitsio FITS library
+export CFITSIO_INC=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/include
+export CFITSIO_LIB=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib
+
+#The fftw3 Fourier transform library
+export FFTW_LIBRARY=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib
+export FFTW_INCLUDE_DIR=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/include
+
+#The lapack linear algebra package
+#On a mac this should just say "-framework Accelerate" or "-framework veclib" if that doesn't work
+export LAPACK_LINK="-L/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib/ -llapack -lblas"
+
+
+#You may need to add :${DYLD_LIBRARY_PATH} to the end of this
+export DYLD_LIBRARY_PATH=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib/:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
+
+#You may need to add :${LD_LIBRARY_PATH} to the end of this
+export LD_LIBRARY_PATH=/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib/:${COSMOSIS_SRC_DIR}/cosmosis/datablock/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck/plc-1.0/lib/:${COSMOSIS_SRC_DIR}/cosmosis-standard-library/likelihood/planck2015/plc-2.0/lib/
+
+#/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/lib/
+export PYTHONPATH=${COSMOSIS_SRC_DIR}:${PYTHONPATH}
+export PATH=${COSMOSIS_SRC_DIR}/bin:/home/groups/kipac/yomori/packages/intelpython3/envs/cosmosis3/bin:${PATH}
+
+
