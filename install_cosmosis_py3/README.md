@@ -14,7 +14,7 @@ conda env create -n <nameofyourenv> -f environment.yaml
 ```
 where ```environment.yaml``` (included in this repo) is a list of packages needed, that I have compiled. ```<nameofyourenv>``` can be anything.
   
-2. Activate your environment (and switching to the conda compilers instead of sys compiler)
+2. Activate your environment (and switching to the conda compilers instead of sys compiler). Without the first line, it will default to the default system compiler which is probably gcc 4.8.X and doesn't have std=c++14. 
 
 ```
 export CONDA_BUILD=1
