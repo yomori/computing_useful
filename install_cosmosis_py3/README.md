@@ -11,11 +11,11 @@ conda env create -n <nameofyourenv> -f environment.yaml
 ```
 where ```environment.yaml``` (included in this repo) is a list of packages needed, that I have compiled. ```<nameofyourenv>``` can be anything.
   
-2. activate your environment (and switching to the conda compilers instead of sys compiler)
+2. Activate your environment (and switching to the conda compilers instead of sys compiler)
 
 ```
 export CONDA_BUILD=1
-conda activate nameofyourenv
+conda activate <nameofyourenv>
 ```
 
 3. Move setup-my-cosmosis to the base cosmoSIS directory and edit the line
