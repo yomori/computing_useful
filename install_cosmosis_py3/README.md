@@ -9,7 +9,7 @@ The easiest way to use CosmoSIS+ python3 is to install using conda.<BR>
 ```
 conda env create -n <nameofyourenv> -f environment.yaml
 ```
-where ```environment.yaml``` (included in this repo) is a list of packages needed, that I have compiled. <nameofyourenv> can be anything.
+where ```environment.yaml``` (included in this repo) is a list of packages needed, that I have compiled. ```<nameofyourenv>``` can be anything.
   
 2. activate your environment (and switching to the conda compilers instead of sys compiler)
 
