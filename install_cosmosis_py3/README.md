@@ -29,8 +29,8 @@ and then source the setup file
 ```
 source setup-my-cosmosis
 ```
-
-4.Create a haky symbolic link:
+ 
+4. Create a haky symbolic link:
 ```
 ln -s ${CONDA_PREFIX}/lib/libgfortran.so ${CONDA_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/lib/libgfortran.so
 ```
