@@ -4,11 +4,14 @@
 #See the wiki https://bitbucket.org/joezuntz/cosmosis/wiki/Manual%20Install
 #on how to change and use this file
 
+
 echo $CONDA_PREFIX
 
 export COSMOSIS_ALT_COMPILERS=1
 
 export COSMOSIS_SRC_DIR=/home/groups/kipac/yomori/packages/cosmosis_py3develop
+
+ln -s ${CONDA_PREFIX}/lib/libgfortran.so ${CONDA_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/lib/libgfortran.so
 
 #The gnu science library
 export GSL_INC=$CONDA_PREFIX/include
