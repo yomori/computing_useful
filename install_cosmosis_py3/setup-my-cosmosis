@@ -8,6 +8,7 @@
 echo $CONDA_PREFIX
 
 export COSMOSIS_ALT_COMPILERS=1
+export MPIFC=mpifort
 
 export COSMOSIS_SRC_DIR=/home/groups/kipac/yomori/packages/cosmosis_py3develop
 
