@@ -4,7 +4,7 @@ Doing a manual installation can be extremely painful especially when the HPC use
 
 The easiest way to use CosmoSIS+ python3 is to install using conda.<BR>
 
-0. If you don't have conda on yoru computer you can get it from: <BR>
+0. If you don't have conda on your computer you can get it from: <BR>
 https://www.anaconda.com/products/individual <BR>
 I'm personally a fan of intelpython since I find it to perform better for numerical computations (packaged as conda): <BR>  https://software.intel.com/content/www/us/en/develop/tools/distribution-for-python.html <BR>
 
