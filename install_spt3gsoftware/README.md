@@ -3,17 +3,18 @@ These are the steps to install spt3g_software on a new computer
 1. To be safe of any path conflicts, undo all paths
 ```
 export PATH=/share/software/user/srcc/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/users/$USER/bin
+export LIBRARY_PATH=""
+export LD_LIBRARY_PATH=""
 ```
 
 2. Create a new conda environment
 ```
 conda env create -n 3g -f 3g_environment.yaml
 ```
+where 3g_environment.yaml has a list of all the packages needed.
 
-3.
+3. Activate the compiler inside conda environment instead of the system one.
 ```
-export LIBRARY_PATH=""
-export LD_LIBRARY_PATH=""
 export CONDA_BUILD=1
 conda activate 3g
 ```
