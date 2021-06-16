@@ -61,3 +61,41 @@ Instead, you should make an alias that will activate the conda environment:
  ```
   
  where YOUR_SHELL_NAME should be your shell name (bash/zsh etc.)
+  
+Writing a submit script
+-----------------------
+
+When you submit a job script, the first thing that need to happen isyou need to activate the conda environment.This can be achieved by:
+```
+eval "$(WHERE_YOU_INSTALLED_ANACAONDA/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"
+```
+next you need you activate the specific conda environment. You can see the list of the conda environments listed by doing 
+```
+conda-env list
+```
+  
+example1 (on midway3)
+```
+#!/bin/bash
+#SBATCH -t 36:00:00
+#SBATCH --ntasks=200
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=caslake
+#SBATCH --account=pi-chihway
+#SBATCH --job-name=5x2_maglim
+
+# load conda
+eval "$(/project/chihway/yomori/repo/anaconda3/bin/conda shell.bash hook)"
+
+# load specific envinment
+conda activate cosmosis3
+   
+cd /project/chihway/yomori/repo/y3-6x2pt/cosmosis/simulated_analysis/5x2_linbias_maglim
+  
+source ../../start_current_cosmosis.sh
+source ../setup_vars_6x2_maglim_nohighz.sh
+export RUN_NAME=5x2_linbias_maglim_lcdm_nohighz
+export DEMODEL=lcdm
+  
+srun -n 200 cosmosis --mpi params_5x2_linbias_maglim.ini -p runtime.sampler='multinest'
+```
