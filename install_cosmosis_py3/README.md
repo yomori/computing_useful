@@ -89,6 +89,9 @@ eval "$(/project/chihway/yomori/repo/anaconda3/bin/conda shell.bash hook)"
 
 # load specific envinment
 conda activate cosmosis3
+  
+# source cosmosis installation
+source /project/chihway/yomori/repo/cosmosis/setup-my-cosmosis
    
 cd /project/chihway/yomori/repo/y3-6x2pt/cosmosis/simulated_analysis/5x2_linbias_maglim
   
