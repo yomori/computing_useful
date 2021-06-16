@@ -34,6 +34,7 @@ dependencies:
   - gcc_linux-64=7.3.0=h553295d_9
   - gfortran_impl_linux-64=7.3.0=hdf63c60_1
   - gfortran_linux-64=7.3.0=h553295d_9
+  - git=pl526hacde149_0 
   - glob2=0.7=py_0
   - gmp=6.2.0=he1b5a44_3
   - gmpy2=2.1.0b1=py38h4588c1f_1
