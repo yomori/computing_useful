@@ -1,3 +1,6 @@
+Main steps
+============================
+
 If you're on a Linux system CosmoSIS comes with a nice automatic installer.
 The problem is that it is based on python2.7, which is phased out already.
 Doing a manual installation can be extremely painful especially when the HPC uses the default compiler to install openmpi/mpich (since cosmosSIS requires std=c++14).
@@ -7,7 +10,9 @@ The easiest way to use CosmoSIS+ python3 is to install using conda.<BR>
 0. If you don't have conda on your computer you can get it from: <BR>
 https://www.anaconda.com/products/individual <BR>
 I'm personally a fan of intelpython since I find it to perform better for numerical computations (packaged as conda): <BR>  https://software.intel.com/content/www/us/en/develop/tools/distribution-for-python.html <BR>
-
+  
+See the "futher tips" section for a few extra points to improve usability.
+  
 1. First create a conda environment <BR>
 ```
 conda env create -n <nameofyourenv> -f environment.yaml
@@ -41,7 +46,13 @@ make
 ```
 
   
----tips---
+
+Further tips
+========================
+
+Installing Anaconda
+-----------------------
+  
 When installing Anaconda, after installation is complete, you will see a prompt saying:
 ```
 Do you wish the installer to initialize Anaconda3
