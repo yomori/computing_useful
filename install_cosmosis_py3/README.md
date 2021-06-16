@@ -34,13 +34,8 @@ and then source the setup file
 ```
 source setup-my-cosmosis
 ```
- 
-4. Create a hacky symbolic link:
-```
-ln -s ${CONDA_PREFIX}/lib/libgfortran.so ${CONDA_PREFIX}/x86_64-conda_cos6-linux-gnu/sysroot/lib/libgfortran.so
-```
 
-5. 
+4. 
 ```
 make
 ```
@@ -65,4 +60,4 @@ Instead, you should make an alias that will activate the conda environment:
  alias ac='eval "$(/project/chihway/yomori/repo/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"' 
  ```
   
- where YOUR_SHELL_NAME should be your shell name (bash/zch etc.)
+ where YOUR_SHELL_NAME should be your shell name (bash/zsh etc.)
