@@ -67,14 +67,14 @@ Writing a submit script
 
 When you submit a job script, the first thing that need to happen isyou need to activate the conda environment.This can be achieved by:
 ```
-eval "$(WHERE_YOU_INSTALLED_ANACAONDA/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"
+eval "$(WHERE_YOU_INSTALLED_ANACAONDA/bin/conda shell.YOUR_SHELL_NAME hook)"
 ```
 next you need you activate the specific conda environment. You can see the list of the conda environments listed by doing 
 ```
 conda-env list
 ```
   
-example1 (on midway3)
+Example 1 (on midway3)
 ```
 #!/bin/bash
 #SBATCH -t 36:00:00
