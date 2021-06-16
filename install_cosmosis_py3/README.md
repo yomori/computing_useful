@@ -39,3 +39,19 @@ ln -s ${CONDA_PREFIX}/lib/libgfortran.so ${CONDA_PREFIX}/x86_64-conda_cos6-linux
 ```
 make
 ```
+
+  
+---tips---
+When installing Anaconda, after installation is complete, you will see a prompt saying:
+```
+Do you wish the installer to initialize Anaconda3
+by running conda init? [yes|no]
+```
+it is recommended to say "no" here. This is because if you have another version of anaconda installed somewhere it will interfere.
+Instead, you should make an alias that will activate the conda environment:
+ 
+ ```
+ alias ac='eval "$(/project/chihway/yomori/repo/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"' 
+ ```
+  
+ where YOUR_SHELL_NAME should be your shell name (bash/zch etc.)
