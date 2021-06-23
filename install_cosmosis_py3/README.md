@@ -1,4 +1,4 @@
-Main steps
+Option 1: Using the environment list
 ============================
 
 If you're on a Linux system CosmoSIS comes with a nice automatic installer.
@@ -39,8 +39,30 @@ source setup-my-cosmosis
 ```
 make
 ```
-
   
+  
+Option 2: Manually starting from scratch
+============================
+Sometimes there are issues with how mpich interacts with the cluster so you have to use the preinstalled openmpi.
+Also I have found that there are some issue with python>3.8.0 and how it interacts with MPI.
+  
+ ```
+ conda create --prefix=/project/chihway/condaenv/cosmosis3 python=3.7
+ ```
+ 
+  
+ then install mpi4py into that environment
+ ```
+ module load openmpi/3.1.4
+ source activate /project/chihway/condaenv/cosmosis3
+ pip install mpi4py
+ ```
+
+ You can check if the installation was successfun by running
+ 
+```
+srun -n 2 python -c "from mpi4py import MPI, __version__; print(__version__ if MPI.COMM_WORLD.Get_rank() else '')"
+ ```
 
 Further tips
 ========================
