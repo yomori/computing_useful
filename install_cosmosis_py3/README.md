@@ -47,14 +47,14 @@ Sometimes there are issues with how mpich interacts with the cluster so you have
 Also I have found that there are some issue with python>3.8.0 and how it interacts with MPI.
   
  ```
- conda create --prefix=/project/chihway/condaenv/cosmosis3 python=3.7
+ conda create --name cosmosis python=3.7
  ```
  
   
  then install mpi4py into that environment
  ```
  module load openmpi/3.1.4
- source activate /project/chihway/condaenv/cosmosis3
+ source activate cosmosis
  pip install mpi4py
  ```
 
