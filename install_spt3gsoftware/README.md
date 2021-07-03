@@ -34,3 +34,36 @@ The last step of make will take about 15 minutes
 
 
 
+
+If you awant to start from scratch
+-----------------------------------------------------
+```
+
+conda create -n spt3g_v2
+```
+Here don't do 
+```
+conda create -n spt3g_v2 python=3.7
+```
+because this will use the system gcc compiler to install python which will probbaly be an OLDER version of GLIBC. 
+Instead, install the conda compilers FIRST, and then use those compilers to install python.
+```
+conda activate spt3g_v3
+conda install -c anaconda gcc_linux-64
+conda install -c anaconda gxx_linux-64
+conda install -c anacond gfortran_linux-64
+conda deactivate
+```
+(typically its considered bad practice to mix -c anaconda and -c conda-forge but I've found that the anaconda version compilers are more up-to-date.)
+then install everything else
+```
+export CONDA_BUILD=1
+conda activate spt3g_v2
+conda install -c conda-forge scipy
+conda install -c conda-forge boost
+conda install -c conda-forge cmake
+conda install -c conda-forge fftw
+conda install -c conda-forge gsl
+conda install -c conda-forge hdf5
+conda install -c conda-forge netcdf4
+```
