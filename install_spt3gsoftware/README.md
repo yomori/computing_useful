@@ -38,7 +38,6 @@ The last step of make will take about 15 minutes
 If you awant to start from scratch
 -----------------------------------------------------
 ```
-
 conda create -n spt3g_v2
 ```
 Here don't do 
@@ -51,7 +50,7 @@ Instead, install the conda compilers FIRST, and then use those compilers to inst
 conda activate spt3g_v3
 conda install -c anaconda gcc_linux-64
 conda install -c anaconda gxx_linux-64
-conda install -c anacond gfortran_linux-64
+conda install -c anaconda gfortran_linux-64
 conda deactivate
 ```
 (typically its considered bad practice to mix -c anaconda and -c conda-forge but I've found that the anaconda version compilers are more up-to-date.)
@@ -66,4 +65,9 @@ conda install -c conda-forge fftw
 conda install -c conda-forge gsl
 conda install -c conda-forge hdf5
 conda install -c conda-forge netcdf4
+```
+
+Finally add a link so that python finds 3gsoftware
+```
+export PYTHON_PATH=$PYTHON_PATH:$DIR_SPT3GSOFTWARE
 ```
