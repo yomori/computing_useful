@@ -72,8 +72,9 @@ Finally add a link so that python finds 3gsoftware
 export PYTHON_PATH=$PYTHON_PATH:$DIR_SPT3GSOFTWARE
 ```
 
-It might be also useful to install ipython and jupyter
+It might be also useful to install ipython and notebook and nbextensions
 ```
 conda install -c conda-forge ipython
 conda install -c conda-forge notebook
+conda install -c conda-forge jupyter_contrib_nbextensions
 ```
