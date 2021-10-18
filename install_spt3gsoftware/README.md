@@ -37,17 +37,24 @@ The last step of make will take about 15 minutes
 
 If you awant to start from scratch
 -----------------------------------------------------
+
 ```
-conda create -n spt3g_v2
+export PATH=/usr/lpp/mmfs/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ac.yomori/.local/bin:/home/ac.yomori/bin
+export LIBRARY_PATH=""
+export LD_LIBRARY_PATH=""
+```
+
+```
+conda create -n spt3g
 ```
 Here don't do 
 ```
-conda create -n spt3g_v2 python=3.7
+conda create -n spt3g python=3.7
 ```
 because this will use the system gcc compiler to install python which will probbaly be an OLDER version of GLIBC. 
 Instead, install the conda compilers FIRST, and then use those compilers to install python.
 ```
-conda activate spt3g_v3
+conda activate spt3g
 conda install -c anaconda gcc_linux-64
 conda install -c anaconda gxx_linux-64
 conda install -c anaconda gfortran_linux-64
@@ -57,12 +64,13 @@ conda deactivate
 then install everything else
 ```
 export CONDA_BUILD=1
-conda activate spt3g_v2
+conda activate spt3g
 conda install -c conda-forge scipy
 conda install -c conda-forge boost
 conda install -c conda-forge cmake
 conda install -c conda-forge fftw
 conda install -c conda-forge gsl
+conda install -c conda-forge libflac
 conda install -c conda-forge hdf5
 conda install -c conda-forge netcdf4
 ```
@@ -77,4 +85,18 @@ It might be also useful to install ipython and notebook and nbextensions
 conda install -c conda-forge ipython
 conda install -c conda-forge notebook
 conda install -c conda-forge jupyter_contrib_nbextensions
+```
+```
+cmake -DPython_EXECUTABLE:FILEPATH=`which python` ..
+```
+(note some sites say to use -DPYTHON3_EXECUTABLE, but this does not always work. ALso not ethat this is CASE SENSITIVE (GOD WHY?))
+If you get some message saying 
+
+```
+runtime library [libgomp.so.1] in /lcrc/project/SPT3G/users/ac.yomori/packages/miniconda3/envs/spt3g_v2/x86_64-conda_cos6-linux-gnu/sysroot/lib may be hidden by files in:
+```
+It is saying that there are other directories that have higher priority that gets read in.
+
+```
+rm -rf *; cmake -DPython_EXECUTABLE:FILEPATH=`which python`  ..
 ```
