@@ -84,6 +84,14 @@ Instead, you should make an alias that will activate the conda environment:
   
  where YOUR_SHELL_NAME should be your shell name (bash/zsh etc.)
   
+Install the relevant packages
+-----------------------
+conda install -c anaconda gcc_linux-64
+conda install -c anaconda gxx_linux-64
+conda install -c anaconda gfortran_linux-64
+conda install -c conda-forge lapack  
+conda install -c conda-forge blas  
+  
 Writing a submit script
 -----------------------
 
