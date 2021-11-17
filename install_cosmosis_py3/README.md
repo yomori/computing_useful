@@ -90,7 +90,8 @@ conda install -c anaconda gcc_linux-64
 conda install -c anaconda gxx_linux-64
 conda install -c anaconda gfortran_linux-64
 conda install -c conda-forge lapack  
-conda install -c conda-forge blas  
+conda install -c conda-forge blas 
+conda install -c conda-forge gsl
   
 Writing a submit script
 -----------------------
