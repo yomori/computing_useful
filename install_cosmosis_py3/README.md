@@ -63,6 +63,24 @@ Also I have found that there are some issue with python>3.8.0 and how it interac
 ```
 srun -n 2 python -c "from mpi4py import MPI, __version__; print(__version__ if MPI.COMM_WORLD.Get_rank() else '')"
  ```
+  
+Next, install the relevant packages
+
+```
+conda install -c anaconda gcc_linux-64
+conda install -c anaconda gxx_linux-64
+conda install -c anaconda gfortran_linux-64
+conda install -c conda-forge lapack  
+conda install -c conda-forge blas 
+conda install -c conda-forge gsl
+conda install -c conda-forge fftw
+conda install -c anaconda numpy
+conda install -c anaconda scipy
+conda install -c anaconda pyyaml
+conda install -c anaconda astropyy
+conda install configparser
+conda install future
+```
 
 Further tips
 ========================
@@ -84,14 +102,6 @@ Instead, you should make an alias that will activate the conda environment:
   
  where YOUR_SHELL_NAME should be your shell name (bash/zsh etc.)
   
-Install the relevant packages
------------------------
-conda install -c anaconda gcc_linux-64
-conda install -c anaconda gxx_linux-64
-conda install -c anaconda gfortran_linux-64
-conda install -c conda-forge lapack  
-conda install -c conda-forge blas 
-conda install -c conda-forge gsl
   
 Writing a submit script
 -----------------------
