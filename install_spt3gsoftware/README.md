@@ -58,8 +58,6 @@ Install the following packages into that environment
 ```
 conda install -c conda-forge cxx-compiler c-compiler fortran-compiler scipy fftw gsl hdf5 libflac cmake boost netcdf4 python=3.9
 ```
-(typically its considered bad practice to mix -c anaconda and -c conda-forge but I've found that the anaconda version compilers are more up-to-date.)
-
 
 Finally add a link so that python finds 3gsoftware
 ```
