@@ -39,11 +39,11 @@ If you awant to start from scratch
 -----------------------------------------------------
 
 ```
-conda create -n env_spt3g
+conda create --prefix {path_to_env}/{env_name}
 ```
 Here don't do 
 ```
-conda create -n spt3g python=3.7
+conda create -n {env_name} python=3.7
 ```
 because this will use the system gcc compiler to install python which will probbaly be an OLDER version of GLIBC. 
 Instead, install the conda compilers FIRST, and then use those compilers to install python. You can check the list of environments you have installed using 
@@ -56,10 +56,7 @@ conda activate {env_name}
 ```
 Install the following packages into that environment
 ```
-conda install cxx-compiler c-compiler fortran-compiler
-conda install -c anaconda python=3.9 boost netcdf4 cmake
-conda install -c conda-forge scipy fftw gsl hdf5 libflac
-conda deactivate
+conda install -c conda-forge cxx-compiler c-compiler fortran-compiler scipy fftw gsl hdf5 libflac cmake boost netcdf4 python=3.9
 ```
 (typically its considered bad practice to mix -c anaconda and -c conda-forge but I've found that the anaconda version compilers are more up-to-date.)
 
