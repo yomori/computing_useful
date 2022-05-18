@@ -41,18 +41,13 @@ If you awant to start from scratch
 ```
 conda create --prefix {path_to_env}/{env_name}
 ```
-Here don't do 
-```
-conda create -n {env_name} python=3.7
-```
-because this will use the system gcc compiler to install python which will probbaly be an OLDER version of GLIBC. 
-Instead, install the conda compilers FIRST, and then use those compilers to install python. You can check the list of environments you have installed using 
+You can check the list of environments you have installed using 
 ```
 conda env list
 ```
-which should list you names or paths to conda environements. To activate one of these environments do
+which should list you names or paths to conda environements. To activate the environment you just created, do:
 ```
-conda activate {env_name}
+conda activate {path_to_env}/{env_name}
 ```
 Install the following packages into that environment
 ```
