@@ -35,9 +35,9 @@ The last step of make will take about 15 minutes
 
 
 
-If you awant to start from scratch
+If you want to do a manual install
 -----------------------------------------------------
-
+1. Create a fresh conda environment
 ```
 conda create --prefix {path_to_env}/{env_name}
 ```
