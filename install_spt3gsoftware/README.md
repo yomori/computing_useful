@@ -47,6 +47,7 @@ conda env list
 ```
 which should list you names or paths to conda environements. To activate the environment you just created, do:
 ```
+export CONDA_BUILD=1
 conda activate {path_to_env}/{env_name}
 ```
 Install the following packages into that environment
