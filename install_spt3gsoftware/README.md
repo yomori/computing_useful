@@ -47,12 +47,17 @@ conda env list
 ```
 which should list you names or paths to conda environements. To activate the environment you just created, do:
 ```
-export CONDA_BUILD=1
 conda activate {path_to_env}/{env_name}
 ```
 Install the following packages into that environment
 ```
-conda install -c conda-forge cxx-compiler c-compiler fortran-compiler scipy fftw gsl hdf5 libflac cmake boost netcdf4 python=3.9
+conda install -c conda-forge cxx-compiler c-compiler fortran-compiler
+conda install -c conda-forge scipy fftw gsl hdf5 libflac=1.3.1 cmake boost netcdf4 python=3.9
+```
+If it complains that it cannot make a safe link then cmake is probably searching for additional locations when it shouldnt be.
+In that case just reset the path to teh system default 
+```
+PATH=$(getconf PATH)
 ```
 
 Finally add a link so that python finds 3gsoftware
