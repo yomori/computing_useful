@@ -45,22 +45,35 @@ You can check the list of environments you have installed using
 ```
 conda env list
 ```
-which should list you names or paths to conda environements. To activate the environment you just created, do:
+which should list you names or paths to conda environements.
+
+2. To activate the environment you just created, do:
 ```
 conda activate {path_to_env}/{env_name}
 ```
-Install the following packages into that environment
+
+3. Install the following packages into that environment
 ```
 conda install -c conda-forge cxx-compiler c-compiler fortran-compiler
 conda install -c conda-forge scipy fftw gsl hdf5 libflac=1.3.1 cmake boost netcdf4 python=3.9
 ```
+
+4. move to the directory where you cloned spt3g_software and then do the standard installation:
+```
+cd spt3g_software
+mkdir build
+cd build
+cmake ..
+make
+```
 If it complains that it cannot make a safe link then cmake is probably searching for additional locations when it shouldnt be.
-In that case just reset the path to teh system default 
+In that case just reset the path:
 ```
 PATH=$(getconf PATH)
 ```
+and then repeat.
 
-Finally add a link so that python finds 3gsoftware
+5. Finally add a link so that python finds 3gsoftware
 ```
 export PYTHON_PATH=$PYTHON_PATH:$DIR_SPT3GSOFTWARE
 ```
