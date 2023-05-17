@@ -42,13 +42,23 @@ These instructions are specifically for crossover, where there is some strange i
 
 ### Test
     
+Go on an interactive node with more than two tasks
+
     srun --pty -p SPT3G -A SPT3G -t 24:00:00 -n2 -c8 /bin/bash
 
+Test MPI using the following command
+
+    cd /lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3
+    eval "$(/lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3/miniconda/bin/conda shell.bash hook)"
+    source activate /lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3/envs/testenv
     mpirun -n 2 python -c "from mpi4py import MPI, __version__; print(__version__ if MPI.COMM_WORLD.Get_rank() else '')"
-This should print out teh version of your MPI4py
+    
+This should print out the version of your MPI4py (something like 3.1.4). To test the actual sampling use: 
 
     mpirun -n 2 cobaya-run test.yaml -f (Metropolis Hasting)
     mpirun -n 2 cobaya-run test_polychord.yaml -f (Metropolis Hasting)
    
-This should run the actual test sampling. 
+or do:
+ 
+    sbatch test.submit
     
