@@ -55,8 +55,8 @@ Test MPI using the following command
     
 This should print out the version of your MPI4py (something like 3.1.4). To test the actual sampling use: 
 
-    mpirun -n 2 cobaya-run test.yaml -f (Metropolis Hasting)
-    mpirun -n 2 cobaya-run test_polychord.yaml -f (Metropolis Hasting)
+    mpirun -n 2 cobaya-run test.yaml -f (Metropolis Hasting sampler)
+    mpirun -n 2 cobaya-run test_polychord.yaml -f (Polychord sampler)
    
 or do:
  
