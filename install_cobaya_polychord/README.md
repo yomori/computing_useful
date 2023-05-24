@@ -20,8 +20,8 @@ These instructions are specifically for crossover, where there is some strange i
     conda activate /lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3/envs/testenv
 
 ### 3. Install python packages
-    conda install python numpy
-    conda install openmpi openmpi-mpicc openmpi-mpicxx openmpi-mpifort
+    conda install -c conda-forge python numpy
+    conda install -c conda-forge openmpi openmpi-mpicc openmpi-mpicxx openmpi-mpifort
     conda install -c conda-forge mpi4py
     python -m pip install cobaya --upgrade
 
