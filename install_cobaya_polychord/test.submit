@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH -t 00:10:00
+#SBATCH --ntasks=2
+#SBATCH --job-name=cibcls
+#SBATCH --partition=SPT3G
+#SBATCH --account=SPT3G
+cd /lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3
+eval "$(/lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3/miniconda/bin/conda shell.bash hook)" 
+source activate /lcrc/project/SPT3G/users/ac.yomori/scratch/testcobaya3/envs/testenv
+mpirun -n 2 cobaya-run test_polychord.yaml -f
