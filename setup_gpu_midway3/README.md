@@ -34,4 +34,5 @@ pip install --quiet optax tqdm hdf5plugin
 pip --quiet install flax optax
 pip install -U scikit-learn
 conda install notebook
+pip install --upgrade tensorflow-probability
 ```
