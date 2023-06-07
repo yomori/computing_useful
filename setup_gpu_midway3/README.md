@@ -32,4 +32,5 @@ pip install --quiet git+https://github.com/DifferentiableUniverseInitiative/JaxP
 pip install --quiet optax tqdm hdf5plugin
 pip --quiet install flax optax
 pip install -U scikit-learn
+conda install notebook
 ```
