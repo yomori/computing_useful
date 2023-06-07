@@ -33,3 +33,9 @@ git clone https://github.com/DifferentiableUniverseInitiative/JaxPM
 cd JaxPM
 python setup.py install
 ```
+
+7. Install cuda-nvcc
+```
+conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
+```
+Here don't do ```conda install cuda-nvcc``` because it will install the latest version of the package. You need the version that matches with the cudatoolkit that you have installed as described in [https://github.com/google/jax/discussions/6843#discussioncomment-2721688](https://github.com/google/jax/discussions/6843#discussioncomment-3103782). You can check the version of cudatoolkit you have with ```conda list```
