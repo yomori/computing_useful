@@ -39,3 +39,10 @@ python setup.py install
 conda install -c "nvidia/label/cuda-11.8.0" cuda-nvcc
 ```
 Here don't do ```conda install cuda-nvcc``` because it will install the latest version of the package. You need the version that matches with the cudatoolkit that you have installed (in step 3.) as described in [https://github.com/google/jax/discussions/6843#discussioncomment-2721688](https://github.com/google/jax/discussions/6843#discussioncomment-3103782). You can check the version of cudatoolkit you have with ```conda list```
+
+8. (optional -- other packages needed for baryonator)
+
+```
+pip --quiet install flax optax 
+conda install tqdm
+```
