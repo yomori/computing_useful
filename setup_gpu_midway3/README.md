@@ -23,7 +23,8 @@ pip install --upgrade "jax[cuda11_pip]" -f https://storage.googleapis.com/jax-re
 
 6. Install cudakit and tensorflow
 ```
-python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.12.*
+pip install nvidia-cudnn-cu11
+pip install tensorflow==2.12.*
 ```
 
 7. Install other packages needed
