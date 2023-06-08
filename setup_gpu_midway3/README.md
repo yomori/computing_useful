@@ -35,4 +35,5 @@ pip --quiet install flax optax
 pip install -U scikit-learn
 conda install notebook
 pip install --upgrade tensorflow-probability
+pip install tensorboard
 ```
