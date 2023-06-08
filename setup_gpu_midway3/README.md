@@ -37,3 +37,18 @@ conda install notebook
 pip install --upgrade tensorflow-probability
 pip install tensorboard
 ```
+
+
+If you are submitting jobs make sure to do
+
+```
+eval "$(/project/chihway/yomori/miniconda/bin/conda shell.bash hook)"
+conda activate /project/chihway/yomori/envs/analysis-gpu3
+
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+```
+
+These lines ensures that the correct libraries are used.
