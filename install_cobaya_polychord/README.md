@@ -25,6 +25,10 @@ These instructions are specifically for crossover, where there is some strange i
     conda install -c conda-forge mpi4py
     python -m pip install cobaya --upgrade
 
+On Midway3, instead of installing openmpi in conda, load the system installed openmpi instead:
+    module load openmpi/3.1.4
+and remember to add that line to the submit script
+
 ### 4. Download and install Pypolychord 
     git clone https://github.com/PolyChord/PolyChordLite.git
 
