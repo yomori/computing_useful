@@ -26,23 +26,25 @@ These instructions are specifically for crossover, where there is some strange i
     python -m pip install cobaya --upgrade
 
 On Midway3, instead of installing openmpi in conda, load the system installed openmpi instead:
+
     module load openmpi/3.1.4
+
 and remember to add that line to the submit script
 
 ### 4. Download and install Pypolychord 
     git clone https://github.com/PolyChord/PolyChordLite.git
 
 #### Modify Make file
+add the -fallow-argument-mismatch to FFLAGS, i.e,
 
-    add the -fallow-argument-mismatch to FFLAGS
-    i.e. FFLAGS += -DMPI -fallow-argument-mismatch
+    FFLAGS += -DMPI -fallow-argument-mismatch
 
 #### Set environment variables
     export FC=mpifort
     export CC=mpicc
     export CXX=mpicxx
 ### Install 
-    5. run python setup.py install 
+    python setup.py install 
 
 ### Test
     
