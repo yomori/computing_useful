@@ -1,12 +1,12 @@
-conda create -n tf-gpu tensorflow-gpu
-conda activate tf-gpu
-pip install cosmopower --no-deps
-pip install tqdm --no-deps
-conda install  -c conda-forge scikit-learn
-pip install tensorflow_probability --no-deps
-pip install tf_keras --no-deps
-pip install decorator --no-deps 
-pip install dm-tree --no-deps
-pip install cloudpickle --no-deps
-conda install nvidia::cuda-compiler
-export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX
+conda create -n tf-gpu tensorflow-gpu<BR>
+conda activate tf-gpu<BR>
+pip install cosmopower --no-deps<BR>
+pip install tqdm --no-deps<BR>
+conda install  -c conda-forge scikit-learn<BR>
+pip install tensorflow_probability --no-deps<BR>
+pip install tf_keras --no-deps<BR>
+pip install decorator --no-deps <BR>
+pip install dm-tree --no-deps<BR>
+pip install cloudpickle --no-deps<BR>
+conda install nvidia::cuda-compiler<BR>
+export XLA_FLAGS=--xla_gpu_cuda_data_dir=$CONDA_PREFIX<BR>
